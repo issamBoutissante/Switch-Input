@@ -1,0 +1,64 @@
+/*this is just for center the swith*/
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --oflineColor: rgba(0, 0, 0, 0.397);
+  --onlineColor: rgba(0, 47, 255, 0.931);
+  --sliderAndswitcheColor: rgba(0, 0, 0, 0.171);
+  /*user select is just to prevent the user from selecting a text in our page */
+  user-select: none;
+}
+/*this is the container of state text and switch*/
+.switchArea {
+  display: flex;
+}
+/*this is the switch that contains the slider*/
+.switch {
+  padding: 1px;
+  background-color: var(--sliderAndswitcheColor);
+  border: 2px solid var(--onlineColor);
+  width: 80px;
+  height: 40px;
+  border-radius: 25px;
+}
+.slider {
+  position: relative;
+  left: 0px;
+  width: 40px;
+  background-color: var(--sliderAndswitcheColor);
+  border: 1px solid var(--onlineColor);
+  box-sizing: border-box;
+  border-radius: 50%;
+  height: 40px;
+  transition: 1s background-color, 0.5s left;
+}
+.slider:hover {
+  background-color: rgba(0, 0, 255, 0.609);
+}
+/*when the user slide to online i will add this class in javascript*/
+.sliderOnline {
+  background-color: var(--onlineColor);
+  left: 40px;
+}
+/*this is the text (online/offline)*/
+.state {
+  font-size: 35px;
+  letter-spacing: 2px;
+  margin: 0;
+  padding-top: 3px;
+  margin-right: 10px;
+  color: var(--oflineColor);
+  transition: 1s color;
+  /*this property allows us to add border(Stroke) for text*/
+  /*I found it in this website https://css-tricks.com/almanac/properties/t/transition/ */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--oflineColor);
+}
+/*when the user slide i will add this class in javascript*/
+.stateOnline {
+  color: var(--onlineColor);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--onlineColor);
+}
